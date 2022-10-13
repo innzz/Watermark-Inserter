@@ -6,6 +6,7 @@ import { render } from '@testing-library/react';
 export default function App() {
   const imageToWaterMarkRef = useRef();
   const [imageToWaterMark, setImageToWaterMark] = useState('');
+  const [loader, setLoader] = useState(false);
   const [prevImageToWaterMark, setPrevImageToWaterMark] = useState('');
   const [watermarkAdded, setWatermarkAdded] = useState(false);
   const [preview, setPreview] = useState(null);
@@ -18,29 +19,34 @@ export default function App() {
                 }
         };
         if (position === "center") {
+          setLoader(true);
           watermark([imageToWaterMark, '/Logo_Bookone.svg'], options)
           .image(watermark.image.center(0.6))
-          .then(img => {setPreview(img.src)});
+          .then(img => {setLoader(false);setPreview(img.src)});
         }
         else if (position === "lower right"){
+          setLoader(true);
           watermark([imageToWaterMark, '/Logo_Bookone.svg'], options)
           .image(watermark.image.lowerRight(0.6))
-          .then(img => {setPreview(img.src)});
+          .then(img => {setLoader(false);setPreview(img.src)});
         }
         else if (position === "upper right"){
+          setLoader(true);
           watermark([imageToWaterMark, '/Logo_Bookone.svg'], options)
           .image(watermark.image.upperRight(0.6))
-          .then(img => {setPreview(img.src)});
+          .then(img => {setLoader(false);setPreview(img.src)});
         }
         else if (position === "lower left"){
+          setLoader(true);
           watermark([imageToWaterMark, '/Logo_Bookone.svg'], options)
           .image(watermark.image.lowerLeft(0.6))
-          .then(img => {setPreview(img.src)});
+          .then(img => {setLoader(false);setPreview(img.src)});
         }
         else if (position === "upper left"){
+          setLoader(true);
           watermark([imageToWaterMark, '/Logo_Bookone.svg'], options)
           .image(watermark.image.upperLeft(0.6))
-          .then(img => {setPreview(img.src)});
+          .then(img => {setLoader(false);setPreview(img.src)});
         }
   }
 
@@ -157,7 +163,7 @@ export default function App() {
           <div className="rightSection">
             <h1>Preview</h1>
             <div className="previewImgContainer" >
-              {preview ? <img src={preview} /> : <img style={{border: "none",marginTop: "100px"}} src="https://media.tenor.com/0Q5kA1OnDwkAAAAi/load-loading.gif" /> }
+              {preview !== null && loader === false ? <>{loader === false ? <img src={preview} /> : <img style={{border: "none",marginTop: "100px"}} src="https://media.tenor.com/0Q5kA1OnDwkAAAAi/load-loading.gif" /> }</> : <img style={{border: "none",marginTop: "100px"}} src="https://media.tenor.com/0Q5kA1OnDwkAAAAi/load-loading.gif" /> }
             </div>
           </div>
       </div>

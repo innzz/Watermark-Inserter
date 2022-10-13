@@ -54,6 +54,7 @@
 .leftSection{
   width: 50%;
   margin-top: 100px;
+  padding: 40px;
 }
 
 .inputSection{
@@ -146,15 +147,18 @@
 
 .rightSection > h1{
   color: rgb(58, 33, 82);
+  padding-left: 40px;
 }
 
 .previewImgContainer{
   max-width: fit-content;
   margin: auto;
-  height: 100%;
+  width: 100%;
+  padding: 40px;
 }
 
 .previewImgContainer > img{
+  width: 100%;
   border: 8px solid rgb(103, 85, 158);
 }
 
@@ -167,4 +171,45 @@
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+}
+
+@media screen and (max-width: 850px){
+  .contentContainer{
+    flex-direction: column-reverse;
+  }
+  .leftSection{
+    width: 100%;
+    margin-top: 50px;
+    padding: 0;
+  }
+  .inputSection{
+    padding-left: 40px
+  }
+  .addRemoveToggleBtn{
+    margin-left: 40px;
+  }
+  .positionsSection{
+    padding-left: 40px;
+  }
+  .rightSection{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .input > input{
+    width: 80px;
+  }
+  .inputSection{
+    padding-left: 20px
+  }
+  .addRemoveToggleBtn{
+    margin-left: 20px;
+  }
+  .positionsSection{
+    padding-left: 20px;
+  }
+  .previewImgContainer{
+    padding: 20px;
+  }
 }
