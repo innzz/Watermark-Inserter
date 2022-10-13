@@ -1,38 +1,171 @@
-.App {
+/* .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.watermarked {
+  position: relative;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
+.watermarked img {
+  width: 100%;
+}
+
+.watermarked::before {
+  position: absolute;
+  top: -75%;
+  left: -75%;
+
+  display: block;
+  width: 150%;
+  height: 150%;
+
+  transform: rotate(-45deg);
+  content: attr(data-watermark);
+
+  opacity: 0.7;
+  line-height: 3em;
+  letter-spacing: 2px;
+  color: #fff;
+} */
+
+.App-container{
   min-height: 100vh;
+  /* height: 100vh; */
+  background: rgb(36,0,35);
+  background: linear-gradient(90deg, rgba(36,0,35,1) 0%, rgba(249,251,255,1) 0%, rgba(240,242,255,1) 14%, rgba(210,219,255,1) 27%, rgba(197,198,255,1) 52%, rgba(181,189,255,1) 70%, rgba(178,148,254,1) 100%);
+}
+
+.contentContainer{
+  display: flex;
+  max-width: 80rem;
+  margin: auto;
+  height: 100%;
+}
+
+.leftSection{
+  width: 50%;
+  margin-top: 100px;
+}
+
+.inputSection{
   display: flex;
   flex-direction: column;
+  padding: 15px 0px;
+}
+
+.inputSection > span{
+  font-weight: 700;
+  font-size: 15px;
+  color: rgb(58, 33, 82);
+}
+
+.input{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input > button{
+  padding: 8px 8px;
+  background: rgb(249,251,255);
+  background: linear-gradient(180deg, rgb(237, 243, 255) 0%, rgb(218, 224, 251) 0%, rgb(195, 202, 242) 7%, rgb(175, 176, 240) 22%, rgb(121, 128, 193) 30%, rgb(157, 127, 231) 73%);
+  color: #fff;
+  border: 1px solid rgb(159, 127, 255);
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input > button:hover{
+  background: rgb(249,251,255);
+  background: linear-gradient(180deg, rgb(203, 216, 241) 0%, rgb(194, 204, 245) 0%, rgb(172, 182, 234) 7%, rgb(157, 158, 234) 22%, rgb(87, 94, 151) 30%, rgb(121, 94, 190) 73%);
+  color: #fff;
+}
+
+.input > input{
+  padding: 8px 5px;
+  border: none;
+  border: 1px solid rgb(184, 184, 184);
+  outline: none;
+}
+
+.addRemoveToggleBtn{
+  padding: 8px 8px;
+  background: rgb(249,251,255);
+  background: linear-gradient(180deg, rgb(237, 243, 255) 0%, rgb(218, 224, 251) 0%, rgb(195, 202, 242) 7%, rgb(175, 176, 240) 22%, rgb(121, 128, 193) 30%, rgb(157, 127, 231) 73%);
+  color: #fff;
+  border: 1px solid rgb(159, 127, 255);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.disabledAddToggleBtn{
+  padding: 8px 8px;
+  background: rgb(249,251,255);
+  background: linear-gradient(180deg, rgb(237, 243, 255) 0%, rgb(240, 242, 253) 0%, rgb(229, 232, 255) 7%, rgb(217, 217, 255) 22%, rgb(189, 195, 242) 30%, rgb(186, 167, 235) 73%);
+  color: #fff;
+  border: 1px solid rgb(159, 127, 255);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.positionsSection{
+  padding: 15px 0px;
+  color: rgb(58, 33, 82);
+}
+
+.positions{
+  font-weight: 600;
+  padding-bottom: 40px;
+}
+
+.positionInput{
+  padding-bottom: 18px;
+  display: flex;
+  align-items: center;
+  color: rgb(58, 33, 82);
+}
+
+.positionInput > input{
+  border-radius: 50%;
+  padding: 10px 10px;
+  background: black;
+}
+
+.rightSection{
+  width: 50%;
+}
+
+.rightSection > h1{
+  color: rgb(58, 33, 82);
+}
+
+.previewImgContainer{
+  max-width: fit-content;
+  margin: auto;
+  height: 100%;
+}
+
+.previewImgContainer > img{
+  width: 100%;
+  border: 8px solid rgb(103, 85, 158);
+}
+
+.imageDownloadButton{
+  padding: 8px 8px;
+  background: rgb(249,251,255);
+  background: linear-gradient(180deg, rgb(237, 243, 255) 0%, rgb(218, 224, 251) 0%, rgb(195, 202, 242) 7%, rgb(175, 176, 240) 22%, rgb(121, 128, 193) 30%, rgb(157, 127, 231) 73%);
+  color: #fff;
+  border: 1px solid rgb(159, 127, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
