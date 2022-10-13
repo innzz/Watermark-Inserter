@@ -108,14 +108,24 @@
   cursor: pointer;
 }
 
+.addRemoveToggleBtn:hover{
+  background: rgb(249,251,255);
+  background: linear-gradient(180deg, rgb(203, 216, 241) 0%, rgb(194, 204, 245) 0%, rgb(172, 182, 234) 7%, rgb(157, 158, 234) 22%, rgb(87, 94, 151) 30%, rgb(121, 94, 190) 73%);
+  color: #fff;
+}
+
 .disabledAddToggleBtn{
   padding: 8px 8px;
-  background: rgb(249,251,255);
   background: linear-gradient(180deg, rgb(237, 243, 255) 0%, rgb(240, 242, 253) 0%, rgb(229, 232, 255) 7%, rgb(217, 217, 255) 22%, rgb(189, 195, 242) 30%, rgb(186, 167, 235) 73%);
   color: #fff;
   border: 1px solid rgb(159, 127, 255);
   border-radius: 5px;
   cursor: pointer;
+}
+
+.disabledAddToggleBtn:hover{
+  background: linear-gradient(180deg, rgb(237, 243, 255) 0%, rgb(240, 242, 253) 0%, rgb(229, 232, 255) 7%, rgb(217, 217, 255) 22%, rgb(189, 195, 242) 30%, rgb(186, 167, 235) 73%);
+  color: #fff;
 }
 
 .positionsSection{
@@ -171,6 +181,12 @@
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+}
+
+.imageDownloadButton:hover{
+  background: rgb(249,251,255);
+  background: linear-gradient(180deg, rgb(203, 216, 241) 0%, rgb(194, 204, 245) 0%, rgb(172, 182, 234) 7%, rgb(157, 158, 234) 22%, rgb(87, 94, 151) 30%, rgb(121, 94, 190) 73%);
+  color: #fff;
 }
 
 @media screen and (max-width: 850px){
