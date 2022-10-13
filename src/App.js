@@ -163,7 +163,7 @@ export default function App() {
           <div className="rightSection">
             <h1>Preview</h1>
             <div className="previewImgContainer" >
-              {preview !== null && loader === false ? <>{loader === false ? <img src={preview} /> : <img style={{border: "none",marginTop: "100px"}} src="https://media.tenor.com/0Q5kA1OnDwkAAAAi/load-loading.gif" /> }</> : <img style={{border: "none",marginTop: "100px"}} src="https://media.tenor.com/0Q5kA1OnDwkAAAAi/load-loading.gif" /> }
+              {loader === false ? <img style={preview !== null ? {border: "8px solid rgb(103, 85, 158)" } : {border: "none"}}  src={preview} /> : <img style={{border: "none",marginTop: "100px"}} src="https://media.tenor.com/0Q5kA1OnDwkAAAAi/load-loading.gif" /> }
             </div>
           </div>
       </div>
